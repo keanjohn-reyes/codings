@@ -1,1 +1,6 @@
 
+select cast(cfd.start_time as date) Date, --count of successful outreach, -- count of unsucessfull outreach, the field call_driver1 contains if successful or unsucessfull
+from "cx360SensAI".txn_nlp_data TND
+	join "cx360SensAI".call_file_details CFD
+		on TND.call_file_id  = cfd.call_file_id 
+where cfd.start_time >= '05-01-2026 00:00:00'
